@@ -1,6 +1,8 @@
+import sizeof from 'object-sizeof'
+
 const Helpers = {
   dataToBytes(data: any): number {
-    return new TextEncoder().encode(JSON.stringify(data)).length
+    return sizeof(data)
   }
 }
 
