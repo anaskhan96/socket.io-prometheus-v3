@@ -1,8 +1,10 @@
-import sizeof from 'object-sizeof'
-
 const Helpers = {
   dataToBytes(data: any): number {
-    return sizeof(data)
+    try {
+      return new TextEncoder().encode(JSON.stringify(data)).length
+    } catch (err) {
+      return 0
+    }
   }
 }
 
